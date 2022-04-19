@@ -18,12 +18,12 @@ public class PatientMvcApplication {
         SpringApplication.run(PatientMvcApplication.class, args);
     }
 
-    @Bean
+    //@Bean      //a chaque demarage insert ligne
     CommandLineRunner commandLineRunner(PatientRepositories patientRepositories){
         return args ->{
-           patientRepositories.save(new Patient(null,"Hassan",new Date(),false,10));
-            patientRepositories.save(new Patient(null,"Mohamed",new Date(),true,20));
-            patientRepositories.save(new Patient(null,"Yassemine",new Date(),false,30));
+           patientRepositories.save(new Patient(null,"Hassan",new Date(),false,100));
+            patientRepositories.save(new Patient(null,"Mohamed",new Date(),true,200));
+            patientRepositories.save(new Patient(null,"Yassemine",new Date(),false,300));
 
             patientRepositories.findAll().forEach(patient -> {
                         System.out.println(patient.getNom());
